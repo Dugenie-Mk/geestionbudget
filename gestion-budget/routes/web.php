@@ -29,3 +29,7 @@ Route::get('/login', function () {
 Route::get('/register', function () {
     return view('auth.register');
 })->name('register');
+
+Route::get('/password', function () {
+    return view('password.forgetpassword');
+})->name('password');
