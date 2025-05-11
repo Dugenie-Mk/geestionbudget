@@ -10,17 +10,17 @@ Route::get('/budgets', function () {
     return view('budgets');
 })->name('budgets');
 
-Route::get('/depenses', function () {
-    return view('depenses');
-})->name('depenses');
+Route::get('/categories', function () {
+    return view('categories');
+})->name('categories');
 
-Route::get('/revenus', function () {
-    return view('revenus');
-})->name('revenus');
+Route::get('/transactions', function () {
+    return view('transactions');
+})->name('transactions');
 
-Route::get('/rapports', function () {
-    return view('rapports');
-})->name('rapports');
+Route::get('/profil', function () {
+    return view('profil');
+})->name('profil');
 
 Route::get('/login', function () {
     return view('auth.login');
