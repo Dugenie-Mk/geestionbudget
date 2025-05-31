@@ -28,11 +28,15 @@ Route::get('/login', function () {
     return view('auth.login');
 })->name('login');
 
+Route::post('/login', [AuthController::class, 'login']);
+
+Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
+
 Route::get('/register', function () {
     return view('auth.register');
 })->name('register');
 
-route::post('/inscription', [AuthController::class, 'inscription']);
+Route::post('/register', [AuthController::class, 'inscription'])->name('register.submit');
 
 Route::get('/password', function () {
     return view('password.forgetpassword');

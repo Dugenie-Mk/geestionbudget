@@ -1,30 +1,37 @@
-
 @extends('layouts.app')
 
 @section('content')
 <div id="form">
-<div class="connexion">
-<img src="{{ asset('images/logo4.png') }}" alt="Illustration budget">
- <form method="post" action="/inscription">
+    <div class="connexion">
+        <img src="{{ asset('images/logo4.png') }}" alt="Illustration budget">
+        <form method="POST" action="{{ route('register') }}">
+            @csrf <!-- Ajout du token CSRF -->
             <fieldset>
-                <legend>inscription</legend>
-                <label for="nom">Nom</label>
-                 <input type="text" id="nom" placeholder="Entrez votre Nom">
-                 <br>
-                <label for="email">email</label>
-                 <input type="email" id="email" placeholder="Entrez votre email">
-                 <br>
-                 <label for="password">password</label>
-                 <input type="password" id="password" placeholder="Entrez votre mot de passe">
-                 <br>
-                 <label for="password">password</label>
-                 <input type="password" id="password" placeholder="confirmer le mot de passe">
-                 <br>
-                 <button type="submit"> Creer un compte</button>
-                 <br>
+                <legend>Inscription</legend>
+                
+                <label for="name">Nom</label>
+                <input type="text" id="name" name="name" placeholder="Entrez votre Nom" value="{{ old('name') }}">
+                @error('name') <span class="error">{{ $message }}</span> @enderror
+                <br>
+                
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="Entrez votre email" value="{{ old('email') }}">
+                @error('email') <span class="error">{{ $message }}</span> @enderror
+                <br>
+                
+                <label for="password">Mot de passe</label>
+                <input type="password" id="password" name="password" placeholder="Entrez votre mot de passe">
+                @error('password') <span class="error">{{ $message }}</span> @enderror
+                <br>
+                
+                <label for="password_confirmation">Confirmation</label>
+                <input type="password" id="password_confirmation" name="password_confirmation" placeholder="Confirmez le mot de passe">
+                <br>
+                
+                <button type="submit">Créer un compte</button>
+                <br>
             </fieldset>
         </form>
-        </div>
+    </div>
 </div>
 @endsection
-   
