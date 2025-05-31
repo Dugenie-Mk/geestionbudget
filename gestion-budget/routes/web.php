@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\http\Controllers\BudgetController;
+use App\http\Controllers\AuthController;
 
 Route::get('/', function () {
     return view('home');
@@ -30,6 +32,18 @@ Route::get('/register', function () {
     return view('auth.register');
 })->name('register');
 
+route::post('/inscription', [AuthController::class, 'inscription']);
+
 Route::get('/password', function () {
     return view('password.forgetpassword');
 })->name('password');
+
+
+Route::get('/form-ajouter-budget', function () {
+    return view('AjouterBudget');
+})->name('form');
+
+Route::get('/form-modifier-budget', function () {
+    return view('ModifierBudget');
+})->name('form');
+

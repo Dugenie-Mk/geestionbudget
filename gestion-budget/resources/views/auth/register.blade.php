@@ -5,7 +5,7 @@
 <div id="form">
 <div class="connexion">
 <img src="{{ asset('images/logo4.png') }}" alt="Illustration budget">
- <form method="post">
+ <form method="post" action="/inscription">
             <fieldset>
                 <legend>inscription</legend>
                 <label for="nom">Nom</label>
@@ -18,9 +18,9 @@
                  <input type="password" id="password" placeholder="Entrez votre mot de passe">
                  <br>
                  <label for="password">password</label>
-                 <input type="password" id="password" placeholder="confirmation">
+                 <input type="password" id="password" placeholder="confirmer le mot de passe">
                  <br>
-                 <button type="submit"> <a href="acceuil.html">Creer un compte</a></button>
+                 <button type="submit"> Creer un compte</button>
                  <br>
             </fieldset>
         </form>
