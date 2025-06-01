@@ -25,7 +25,7 @@
                 <tr>
                     <th>Id</th>
                     <th>Date</th>
-                    <th>Description</th>
+                    <th>Type Categories</th>
                     <th>Montant</th>
                     <th>Actions</th>
                 </tr>
@@ -34,7 +34,7 @@
                 <tr>
                 <td>1</td>
                 <td>2023</td>
-                <td>ma description</td>
+                <td>loisirs</td>
                 <td>100000</td>
                 <td>
                     <a href="/form-modifier-budget" class="btn btn-info">Update</a>
