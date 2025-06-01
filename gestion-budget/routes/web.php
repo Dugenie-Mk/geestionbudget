@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\http\Controllers\BudgetController;
 use App\http\Controllers\AuthController;
 
+
 Route::get('/', function () {
     return view('home');
 })->name('home');
@@ -51,3 +52,12 @@ Route::get('/form-modifier-budget', function () {
     return view('ModifierBudget');
 })->name('form');
 
+Route::get('/form-ajouter-categorie', function () {
+    return view('Categories.AjouterCategorie');
+})->name('form');
+
+
+
+Route::get('/form-modifier-categorie', function () {
+    return view('Categories.ModifierCategorie');
+})->name('form');
