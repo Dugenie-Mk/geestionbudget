@@ -5,20 +5,20 @@
 <div class="container text-center">
     <div class="row">
       <div class="col s12">
-        <h1>Modifier un budget</h1>
+        <h1>Modifier une transaction</h1>
         <hr>
 
         
 <form  method="POST" class="form-groupe">
 
   <div class="form-groupe">
-    <label for="date">Date</label>
-    <input type="date" class="form-control" id="date" name="date" required>
+    <label for="numero de compte">Numero de compte</label>
+    <input type="number" class="form-control" id="numero de compte" name="numero de compte" required>
   </div>
 
   <div class="form-groupe">
-    <label for="description">Description</label>
-    <input type="text" class="form-control" id="description" name="description" required>
+     <label for="date">Date</label>
+    <input type="date" class="form-control" id="date" name="date">
   </div>
 
   <div class="form-groupe">
@@ -30,7 +30,7 @@
   <button type="submit" class="btn btn-info">Modifier</button>
 <br>
 <br>
-<a href="/budgets" class="btn btn-danger">RETOUR</a>
+<a href="/transactions" class="btn btn-danger">RETOUR</a>
 <br>
 <br>
 

@@ -9,7 +9,7 @@
         <a href="{{ route('register') }}" class="cta-button">Commencez gratuitement</a>
     </div>
     <div class="hero-image">
-        <img src="{{ asset('images/he        ro.jpg') }}" alt="Illustration budget">
+        <img src="{{ asset('images/hero.jpg') }}" alt="Illustration budget">
     </div>
 </section>
 

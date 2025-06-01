@@ -51,3 +51,13 @@ Route::get('/form-modifier-budget', function () {
     return view('ModifierBudget');
 })->name('form');
 
+
+Route::get('/form-ajouter-transactions', function () {
+    return view('transactions.AjouterTransactions');
+})->name('form');
+
+
+Route::get('/form-modifier-transactions', function () {
+    return view('transactions.ModifierTransactions');
+})->name('form');
+
