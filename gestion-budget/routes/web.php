@@ -52,7 +52,6 @@ Route::get('/form-modifier-budget', function () {
     return view('ModifierBudget');
 })->name('form');
 
-
 Route::get('/form-ajouter-categorie', function () {
     return view('Categories.AjouterCategorie');
 })->name('form');

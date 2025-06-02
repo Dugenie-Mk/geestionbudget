@@ -51,6 +51,8 @@ class AuthController extends Controller
                 'email' => 'Identifiants incorrects',
             ])->onlyInput('email');
         }
+
+        Auth::login($user);
     
         return redirect()->intended('/');
     }
