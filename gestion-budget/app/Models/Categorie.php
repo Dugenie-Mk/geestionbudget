@@ -12,4 +12,9 @@ class Categorie extends Model
         'users_id',
         'name',
     ];
+
+    public function user()
+    {
+        return $this->belongsTo(User::class, 'users_id');
+    }
 }
