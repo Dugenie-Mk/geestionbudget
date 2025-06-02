@@ -52,7 +52,7 @@ Route::get('/form-modifier-budget', function () {
     return view('ModifierBudget');
 })->name('form');
 
-<<<<<<< HEAD
+
 Route::get('/form-ajouter-categorie', function () {
     return view('Categories.AjouterCategorie');
 })->name('form');
@@ -62,7 +62,7 @@ Route::get('/form-ajouter-categorie', function () {
 Route::get('/form-modifier-categorie', function () {
     return view('Categories.ModifierCategorie');
 })->name('form');
-=======
+
 
 Route::get('/form-ajouter-transactions', function () {
     return view('transactions.AjouterTransactions');
@@ -73,4 +73,4 @@ Route::get('/form-modifier-transactions', function () {
     return view('transactions.ModifierTransactions');
 })->name('form');
 
->>>>>>> 50bbb6dac490c3f3b1dc6aaf569b88cd0188a581
+  
