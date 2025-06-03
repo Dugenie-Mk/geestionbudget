@@ -4,80 +4,103 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Transaction;
-
+use App\Models\Categorie; 
+use App\Models\Compte; 
 
 class TransactionController extends Controller
 {
     /**
-     * Afficher la liste des catégories.
+     * Afficher la liste des transactions.
      */
     public function index()
     {
-        $categories = Categorie::all();
-        return view('categories', compact('categories'));
+        $transactions = Transaction::all();
+        return view('transactions', compact('transactions')); 
     }
 
     /**
-     * Afficher le formulaire pour ajouter une nouvelle catégorie.
+     * Afficher le formulaire pour ajouter une nouvelle transaction.
      */
     public function create()
     {
-        return view('categories.AjouterCategorie');
+        $categories = Categorie::all();
+        $accounts = Compte::all();
+        return view('transactions.AjouterTransaction', compact('categories', 'accounts'));
     }
 
     /**
-     * Enregistrer une nouvelle catégorie dans la base de données.
+     * Enregistrer une nouvelle transaction dans la base de données.
      */
     public function store(Request $request)
     {
-         $request->validate([
-            'name' => 'required|string|max:255',
+        $request->validate([
+            'account_id' => 'required|integer',
+            'date' => 'required|string',
+            'amount'=>'required|integer|min:1',
+            'type' => 'required|in:revenus,depenses,transfert',
+            'category_id'=>'required|integer',
+            'description'=>'required|string',
         ]);
 
-        Categorie::create([
-            'users_id' => auth()->id(),
-            'name' => $request->name,
+        Transaction::create([
+            'account_id' => $request->account_id,
+            'date'=> $request->date,
+            'amount'=> $request->amount,
+            'type'=> $request->type,
+            'category_id'=>$request->category_id, 
+            'description'=>$request->description,
         ]);
 
-        return redirect()->route('categories')->with('success', 'Catégorie ajoutée avec succès.');
+        return redirect()->route('transactions')->with('success', 'Transaction ajoutée avec succès.');
     }
 
     /**
-     * Afficher le formulaire pour modifier une catégorie existante.
+     * Afficher le formulaire pour modifier une transaction existante.
      */
     public function edit($id)
     {
-        $categorie = Categorie::findOrFail($id);
-        return view('categories.ModifierCategorie', compact('categorie'));
+        $transaction = Transaction::findOrFail($id);
+        $categories = Categorie::all();
+        $accounts = Compte::all();
+        return view('transactions.ModifierTransaction', compact('transaction', 'categories', 'accounts'));
     }
 
     /**
-     * Mettre à jour une catégorie dans la base de données.
+     * Mettre à jour une transaction dans la base de données.
      */
     public function update(Request $request, $id)
     {
-        $categorie = Categorie::findOrFail($id);
+        $transaction = Transaction::findOrFail($id);
 
-        $validated = $request->validate([
-            'name' => 'required|string|max:255',
+        $request->validate([
+            'account_id' => 'required|integer',
+            'date' => 'required|string',
+            'amount'=>'required|integer|min:1',
+            'type' => 'required|in:revenus,depenses,transfert',
+            'category_id'=>'required|integer',
+            'description'=>'required|string',
         ]);
 
-        $categorie->update([
-            'users_id' => auth()->id(),
-            'name' => $request->name,
+        $transaction->update([
+            'account_id' => $request->account_id,
+            'date'=> $request->date,
+            'amount'=> $request->amount,
+            'type'=> $request->type,
+            'category_id'=>$request->category_id,
+            'description'=>$request->description,
         ]);
 
-        return redirect()->route('categories')->with('success', 'Catégorie mise à jour avec succès.');
+        return redirect()->route('transactions')->with('success', 'Transaction mise à jour avec succès.');
     }
 
     /**
-     * Supprimer une catégorie de la base de données.
+     * Supprimer une transaction de la base de données.
      */
     public function destroy($id)
     {
-        $categorie = Categorie::findOrFail($id);
-        $categorie->delete();
+        $transaction = Transaction::findOrFail($id);
+        $transaction->delete();
 
-        return redirect()->route('categories')->with('success', 'Catégorie supprimée avec succès.');
+        return redirect()->route('transactions')->with('success', 'Transaction supprimée avec succès.');
     }
 }

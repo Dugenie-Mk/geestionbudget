@@ -16,4 +16,14 @@ class Transaction extends Model
         'category_id',
         'description',
     ];
+
+        public function account()
+    {
+        return $this->belongsTo(Compte::class);
+    }
+    
+    public function category()
+    {
+        return $this->belongsTo(Categorie::class);
+    }
 }

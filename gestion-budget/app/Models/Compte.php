@@ -13,4 +13,10 @@ class Compte extends Model
         'account_name',
         'balance',
     ];
+
+    
+     public function user()
+    {
+        return $this->belongsTo(User::class, 'users_id');
+    }
 }

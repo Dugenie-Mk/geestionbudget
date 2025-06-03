@@ -18,12 +18,12 @@
             <form method="POST" action="/comptes" class="form-groupe">
                 @csrf
                 <div class="form-groupe">
-                    <label for="name">nom du compte</label>
-                    <input type="text" class="form-control" id="name" name="name" required>
+                    <label for="account_name">nom du compte</label>
+                    <input type="text" class="form-control" id="account_name" name="account_name" required>
                 </div>
                 <div class="form-groupe">
-                    <label for="name">montant de compte</label>
-                    <input type="text" class="form-control" id="name" name="name" required>
+                    <label for="balance">montant de compte</label>
+                    <input type="text" class="form-control" id="balance" name="balance" required>
                 </div>
                 <button type="submit" class="btn btn-info">AJOUTER</button>
                 <br><br>

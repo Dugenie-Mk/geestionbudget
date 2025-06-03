@@ -32,12 +32,12 @@ class CompteController extends Controller
     {
          $request->validate([
             'account_name' => 'required|string|max:255',
-            'balance'=> 'required|integer|min:1', //validation des champs remplis par l'utilisateur
+            'balance'=> 'required|integer|min:1',
         ]);
 
         compte::create([
             'users_id' => auth()->id(),
-            'account_name' => $request->account_name,//creation des champs entres par l'utilisateur
+            'account_name' => $request->account_name,
             'balance'=> $request->balance,
         ]);
 
@@ -58,16 +58,16 @@ class CompteController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $compte = compte::findOrFail($id);
-
-        $validated = $request->validate([
-             'account_name' => 'required|string|max:255',
-            'balance'=> 'required|integer|min:1', //validation des champs remplis par l'utilisateur
+        $request->validate([
+            'account_name' => 'required|string|max:255',
+            'balance'=> 'required|integer|min:1',
         ]);
+        
+        $compte = compte::findOrFail($id);
 
         $compte->update([
             'users_id' => auth()->id(),
-            'account_name' => $request->account_name, //mise a jour des champs entres par l'utilisateur
+            'account_name' => $request->account_name,
              'balance'=> $request->balance,
         ]);
 

@@ -5,6 +5,7 @@ use App\Http\Controllers\BudgetController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\CompteController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\TransactionController;
 
 Route::get('/', function () {
     return view('home');
@@ -13,14 +14,6 @@ Route::get('/', function () {
 Route::get('/budgets', function () {
     return view('budgets');
 })->name('budgets');
-
-Route::get('/transactions', function () {
-    return view('transactions');
-})->name('transactions');
-
-Route::get('/profil', function () {
-    return view('profil');
-})->name('profil');
 
 Route::get('/login', function () {
     return view('auth.login');
@@ -64,6 +57,7 @@ Route::get('/form-modifier-categorie/{id}', [CategoryController::class, 'edit'])
 Route::put('/categories/{id}', [CategoryController::class, 'update'])->name('categories.update');
 Route::delete('/categories/{id}', [CategoryController::class, 'destroy'])->name('categories.destroy');
 
+
 //Routes pour les comptes
 Route::get('/comptes', [CompteController::class, 'index'])->name('comptes');
 Route::get('/form-ajouter-compte', [CompteController::class, 'create'])->name('comptes.create');
@@ -71,3 +65,12 @@ Route::post('/comptes', [CompteController::class, 'store'])->name('comptes.store
 Route::get('/form-modifier-compte/{id}', [CompteController::class, 'edit'])->name('comptes.edit');
 Route::put('/comptes/{id}', [CompteController::class, 'update'])->name('comptes.update');
 Route::delete('/comptes/{id}', [CompteController::class, 'destroy'])->name('comptes.destroy');
+
+//Routes pour les transaction
+
+Route::get('/transactions', [TransactionController::class, 'index'])->name('transactions');
+Route::get('/form-ajouter-compte', [TransactionController::class, 'create'])->name('transactions.create');
+Route::post('/transactions', [TransactionController::class, 'store'])->name('transactions.store');
+Route::get('/form-modifier-compte/{id}', [TransactionController::class, 'edit'])->name('transactions.edit');
+Route::put('/transactions/{id}', [TransactionController::class, 'update'])->name('transactions.update');
+Route::delete('/transactions/{id}', [TransactionController::class, 'destroy'])->name('transactions.destroy');

@@ -19,13 +19,13 @@
                 @csrf
                 @method('PUT')
                 <div class="form-groupe">
-                    <label for="name">nom du compte</label>
-                    <input type="text" class="form-control" id="name" name="name" value="{{ $compte->account_name }}" required>
+                    <label for="account_name">nom du compte</label>
+                    <input type="text" class="form-control" id="account_name" name="account_name" value="{{ $compte->account_name }}" required>
                 </div>
 
                  <div class="form-groupe">
-                    <label for="name">montant de compte</label>
-                    <input type="number" class="form-control" id="name" name="name" value="{{ $compte->balance }}" required>
+                    <label for="balance">montant de compte</label>
+                    <input type="number" class="form-control" id="balance" name="balance" value="{{ $compte->balance }}" required>
                 </div>
                 <button type="submit" class="btn btn-info">Modifier</button>
                 <br><br>
