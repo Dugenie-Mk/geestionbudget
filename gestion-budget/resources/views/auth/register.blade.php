@@ -6,9 +6,7 @@
         <img src="{{ asset('images/logo4.png') }}" alt="Illustration budget">
         <form method="POST" action="{{ route('register') }}">
             @csrf <!-- Ajout du token CSRF -->
-            <fieldset>
-                <legend>Inscription</legend>
-                
+
                 <label for="name">Nom</label>
                 <input type="text" id="name" name="name" placeholder="Entrez votre Nom" value="{{ old('name') }}">
                 @error('name') <span class="error">{{ $message }}</span> @enderror
@@ -30,7 +28,6 @@
                 
                 <button type="submit">Créer un compte</button>
                 <br>
-            </fieldset>
         </form>
     </div>
 </div>

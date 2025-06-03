@@ -6,7 +6,7 @@
       background-color: #f0f2f5;
       display: flex;
       justify-content: center;
-      align-items: left;
+      align-items: center;
       height: 100vh;
     }
   
@@ -26,15 +26,15 @@
   
     .connexion input {
       width: 100%;
-      padding: 10px; 
-      margin: 10px;
+      padding: 10px 0px; 
+      margin: 10px 0px;
       border-radius: 5px;
       border: 1px solid #ccc;
     }
   
     .connexion button {
       width: 100%;
-      padding: 10px;
+      padding: 10px 0px;
       background-color: #007bff;
       color: white;
       border: none;

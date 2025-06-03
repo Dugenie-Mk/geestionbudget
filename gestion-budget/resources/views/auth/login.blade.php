@@ -6,9 +6,7 @@
         <img src="{{ asset('images/logo4.png') }}" alt="Illustration budget">
         <form method="POST" action="{{ route('login') }}">
             @csrf
-            <fieldset>
-                <legend>Connexion</legend>
-                
+        
                 <!-- Champ Email -->
                 <label for="email">Email</label>
                 <input type="email" id="email" name="email" 
@@ -37,7 +35,6 @@
                 <small><a href="/password">Mot de passe oublié</a></small>
                 <br><br>
                 <small>Pas encore inscrit ? <a href="{{ route('register') }}">Créer un compte</a></small>
-            </fieldset>
         </form>
     </div>  
 </div>
