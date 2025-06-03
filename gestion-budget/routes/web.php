@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BudgetController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\CompteController;
+use App\Http\Controllers\CategoryController;
 
 Route::get('/', function () {
     return view('home');
