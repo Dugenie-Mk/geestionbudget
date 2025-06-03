@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BudgetController;
 use App\Http\Controllers\AuthController;
-use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\CompteController;
 
 Route::get('/', function () {
     return view('home');
@@ -62,3 +62,11 @@ Route::post('/categories', [CategoryController::class, 'store'])->name('categori
 Route::get('/form-modifier-categorie/{id}', [CategoryController::class, 'edit'])->name('categories.edit');
 Route::put('/categories/{id}', [CategoryController::class, 'update'])->name('categories.update');
 Route::delete('/categories/{id}', [CategoryController::class, 'destroy'])->name('categories.destroy');
+
+//Routes pour les comptes
+Route::get('/comptes', [CompteController::class, 'index'])->name('comptes');
+Route::get('/form-ajouter-compte', [CompteController::class, 'create'])->name('comptes.create');
+Route::post('/comptes', [CompteController::class, 'store'])->name('comptes.store');
+Route::get('/form-modifier-compte/{id}', [CompteController::class, 'edit'])->name('comptes.edit');
+Route::put('/comptes/{id}', [CompteController::class, 'update'])->name('comptes.update');
+Route::delete('/comptes/{id}', [CompteController::class, 'destroy'])->name('comptes.destroy');

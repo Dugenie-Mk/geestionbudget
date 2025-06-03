@@ -9,7 +9,7 @@
             <a href="{{ route('transactions') }}">Transactions</a>
             <a href="{{ route('budgets') }}">Mes budgets</a>
             <a href="{{ route('login') }}">Connexion</a>
-            <a href="{{ route('profil') }}"> <img src="" alt="profil">Profil</a>
+            <a href="{{ route('comptes') }}"> Compte</a>
         </nav>
     </div>
 </header>
