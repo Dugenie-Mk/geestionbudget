@@ -69,8 +69,8 @@ Route::delete('/comptes/{id}', [CompteController::class, 'destroy'])->name('comp
 //Routes pour les transaction
 
 Route::get('/transactions', [TransactionController::class, 'index'])->name('transactions');
-Route::get('/form-ajouter-compte', [TransactionController::class, 'create'])->name('transactions.create');
+Route::get('/form-ajouter-transaction', [TransactionController::class, 'create'])->name('transactions.create');
 Route::post('/transactions', [TransactionController::class, 'store'])->name('transactions.store');
-Route::get('/form-modifier-compte/{id}', [TransactionController::class, 'edit'])->name('transactions.edit');
+Route::get('/form-modifier-transaction/{id}', [TransactionController::class, 'edit'])->name('transactions.edit');
 Route::put('/transactions/{id}', [TransactionController::class, 'update'])->name('transactions.update');
 Route::delete('/transactions/{id}', [TransactionController::class, 'destroy'])->name('transactions.destroy');
