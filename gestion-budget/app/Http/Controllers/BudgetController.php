@@ -15,7 +15,7 @@ class BudgetController extends Controller
      */
     public function index()
     {
-        $budgets = Budget::all();
+        $budgets = Budget::with('categorie')->get();
         return view('budgets', compact('budgets'));
     }
 

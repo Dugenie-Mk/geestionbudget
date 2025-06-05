@@ -44,7 +44,7 @@
                                 <form action="/budgets/{{ $budget->id }}" method="POST" style="display:inline;">
                                     @csrf
                                     @method('DELETE')
-                                    <button type="submit" class="btn btn-danger">Delete</button>
+                                <button type="submit" class="btn btn-danger" onclick="return confirm('Êtes-vous sûr de vouloir supprimer ce budget ?')">Delete</button>
                                 </form>
                             </td>
                         </tr>

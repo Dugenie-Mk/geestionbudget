@@ -27,7 +27,7 @@
                     <label for="category_id">Catégorie</label>
                     <select class="form-control" id="category_id" name="category_id" required>
                         @foreach($categories as $category)
-                            <option value="{{ $category->id }}" {{ $transaction->category_id == $category->id ? 'selected' : '' }}>
+                            <option value="{{ $category->id }}" {{ $budget->category_id == $category->id ? 'selected' : '' }}>
                                 {{ $category->name }}
                             </option>
                         @endforeach

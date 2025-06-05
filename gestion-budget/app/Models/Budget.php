@@ -13,8 +13,8 @@ class Budget extends Model
         'budgeted_amount',
     ];
 
-    public function categorie()
+        public function categorie()
     {
-        return $this->belongsTo(Categorie::class);
+        return $this->belongsTo(Categorie::class, 'category_id');
     }
 }
