@@ -11,10 +11,6 @@ Route::get('/', function () {
     return view('home');
 })->name('home');
 
-Route::get('/budgets', function () {
-    return view('budgets');
-})->name('budgets');
-
 Route::get('/login', function () {
     return view('auth.login');
 })->name('login');
@@ -66,11 +62,20 @@ Route::get('/form-modifier-compte/{id}', [CompteController::class, 'edit'])->nam
 Route::put('/comptes/{id}', [CompteController::class, 'update'])->name('comptes.update');
 Route::delete('/comptes/{id}', [CompteController::class, 'destroy'])->name('comptes.destroy');
 
-//Routes pour les transaction
-
+//Routes pour les transactions
 Route::get('/transactions', [TransactionController::class, 'index'])->name('transactions');
 Route::get('/form-ajouter-transaction', [TransactionController::class, 'create'])->name('transactions.create');
 Route::post('/transactions', [TransactionController::class, 'store'])->name('transactions.store');
 Route::get('/form-modifier-transaction/{id}', [TransactionController::class, 'edit'])->name('transactions.edit');
 Route::put('/transactions/{id}', [TransactionController::class, 'update'])->name('transactions.update');
 Route::delete('/transactions/{id}', [TransactionController::class, 'destroy'])->name('transactions.destroy');
+
+
+// Routes pour les budgets
+Route::get('/budgets', [BudgetController::class, 'index'])->name('budgets');
+Route::get('/form-ajouter-budget', [BudgetController::class, 'create'])->name('budgets.create');
+Route::post('/budgets', [BudgetController::class, 'store'])->name('budgets.store');
+Route::get('/form-modifier-budget/{id}', [BudgetController::class, 'edit'])->name('budgets.edit');
+Route::put('/budgets/{id}', [BudgetController::class, 'update'])->name('budgets.update');
+Route::delete('/budgets/{id}', [BudgetController::class, 'destroy'])->name('budgets.destroy');
+

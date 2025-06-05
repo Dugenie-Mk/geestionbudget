@@ -10,7 +10,11 @@ class Budget extends Model
     use HasFactory;
     protected $fillable = [
         'category_id',
-        'periode_de_budgets_id',
         'budgeted_amount',
     ];
+
+    public function categorie()
+    {
+        return $this->belongsTo(Categorie::class);
+    }
 }

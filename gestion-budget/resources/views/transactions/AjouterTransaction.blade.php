@@ -28,7 +28,7 @@
                     <label for="amount">Montant</label>
                     <input type="number" class="form-control" id="amount" name="amount" required min="1">
                 </div>
-
+                <br>
                 <div class="form-groupe">
                     <label for="type">Type</label>
                     <select class="form-control" id="type" name="type" required>

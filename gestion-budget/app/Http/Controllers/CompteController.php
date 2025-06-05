@@ -31,7 +31,7 @@ class CompteController extends Controller
     public function store(Request $request)
     {
          $request->validate([
-            'account_name' => 'required|string|max:255',
+            'account_name' => 'required|string|max:255|unique:comptes',
             'balance'=> 'required|integer|min:1',
         ]);
 

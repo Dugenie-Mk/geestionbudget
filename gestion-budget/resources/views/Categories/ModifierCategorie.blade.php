@@ -22,6 +22,7 @@
                     <label for="name">Description</label>
                     <input type="text" class="form-control" id="name" name="name" value="{{ $categorie->name }}" required>
                 </div>
+                <br>
                 <button type="submit" class="btn btn-info">Modifier</button>
                 <br><br>
                 <a href="/categories" class="btn btn-danger">RETOUR</a>
